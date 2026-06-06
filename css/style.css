@@ -1,0 +1,589 @@
+/* =============================================
+   TAYLOR SWIFT FAN PAGE - style.css
+   Parte 1: Variables, base y navbar
+   ============================================= */
+
+/* --- Variables --- */
+:root {
+  --color-bg: #111111;
+  --color-bg-card: #1c1c1c;
+  --color-rosa: #e8a0bf;
+  --color-rosa-hover: #f0c0d5;
+  --color-blanco: #f5f0f0;
+  --color-gris: #999999;
+  --color-gris-claro: #cccccc;
+  --fuente-titulo: 'Georgia', serif;
+  --fuente-cuerpo: 'Arial', sans-serif;
+  --transicion: 0.3s ease;
+  --radio: 6px;
+}
+
+/* --- Reset y base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-blanco);
+  font-family: var(--fuente-cuerpo);
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* =============================================
+   NAVBAR - sobreescribe Bootstrap
+   ============================================= */
+.ts-navbar {
+  background-color: #0a0a0a !important;
+  border-bottom: 1px solid rgba(232, 160, 191, 0.2);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.ts-brand {
+  font-family: var(--fuente-titulo);
+  font-size: 1.3rem;
+  letter-spacing: 0.12em;
+  color: var(--color-rosa) !important;
+  transition: color var(--transicion);
+}
+
+.ts-brand:hover {
+  color: var(--color-rosa-hover) !important;
+}
+
+.ts-navbar .nav-link {
+  color: var(--color-gris-claro) !important;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  margin-left: 1rem;
+  padding-bottom: 4px;
+  position: relative;
+  transition: color var(--transicion);
+}
+
+/* Linea animada debajo del link */
+.ts-navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-rosa);
+  transition: width var(--transicion);
+}
+
+.ts-navbar .nav-link:hover,
+.ts-navbar .nav-link.active {
+  color: var(--color-rosa) !important;
+}
+
+.ts-navbar .nav-link:hover::after,
+.ts-navbar .nav-link.active::after {
+  width: 100%;
+}
+
+/* Boton hamburguesa mobile */
+.ts-toggler {
+  border-color: var(--color-rosa) !important;
+  filter: invert(1);
+}
+
+/* =============================================
+   HERO - solo index
+   ============================================= */
+.ts-hero {
+  position: relative;
+  height: 92vh;
+  min-height: 500px;
+  /* Reemplazá con tu imagen de fondo */
+  background-image: url('../img/hero_bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+}
+
+.ts-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.3) 0%,
+    rgba(10, 10, 10, 0.65) 60%,
+    rgba(10, 10, 10, 1) 100%
+  );
+}
+
+.ts-hero-content {
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.ts-hero-title {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(3rem, 9vw, 7rem);
+  letter-spacing: 0.2em;
+  color: var(--color-blanco);
+  text-shadow: 0 2px 30px rgba(0,0,0,0.6);
+}
+
+.ts-hero-sub {
+  font-size: 1rem;
+  letter-spacing: 0.25em;
+  color: var(--color-rosa);
+  margin-top: 0.8rem;
+  text-transform: uppercase;
+}
+
+/* =============================================
+   ENCABEZADO DE PÁGINA SECUNDARIA
+   ============================================= */
+.ts-page-header {
+  position: relative;
+  height: 30vh;
+  min-height: 200px;
+  background-image: url('../img/hero_bg.jpg');
+  background-size: cover;
+  background-position: center 35%;
+}
+
+/* Para páginas dentro de /page/ la ruta cambia */
+.ts-page-header {
+  background-image: url('../../img/hero_bg.jpg');
+}
+
+.ts-page-header-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.75);
+}
+
+.ts-page-title {
+  position: relative;
+  z-index: 1;
+  font-family: var(--fuente-titulo);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: 0.3em;
+  color: var(--color-rosa);
+}
+
+/* =============================================
+   TEXTOS Y TIPOGRAFÍA
+   ============================================= */
+.ts-section-title {
+  font-family: var(--fuente-titulo);
+  font-size: 1.8rem;
+  color: var(--color-rosa);
+  margin-bottom: 1.2rem;
+}
+
+.ts-subtitle {
+  color: var(--color-gris-claro);
+  font-size: 0.95rem;
+}
+
+/* =============================================
+   BOTONES
+   ============================================= */
+.ts-btn {
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  border: 1px solid var(--color-rosa);
+  color: var(--color-rosa);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: transparent;
+  border-radius: var(--radio);
+  transition: background var(--transicion), color var(--transicion);
+  cursor: pointer;
+}
+
+.ts-btn:hover {
+  background: var(--color-rosa);
+  color: #111111;
+  text-decoration: none;
+}
+
+.ts-btn-spotify {
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  background-color: #1DB954;
+  color: white;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background var(--transicion), transform var(--transicion);
+}
+
+.ts-btn-spotify:hover {
+  background-color: #17a349;
+  color: white;
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+/* =============================================
+   BIO - HOME
+   ============================================= */
+.ts-bio {
+  background-color: var(--color-bg);
+}
+
+.ts-bio-img {
+  border-radius: var(--radio);
+  box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+  transition: transform var(--transicion);
+}
+
+.ts-bio-img:hover {
+  transform: scale(1.02);
+}
+
+/* =============================================
+   TOUR - NUEVO DISEÑO (foto + filas)
+   ============================================= */
+
+/* Foto de fondo tipo Ed Sheeran */
+.tour-hero {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.tour-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0.7;
+}
+
+.tour-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, #111111 100%);
+  z-index: 1;
+}
+
+/* Filas de fechas */
+.tour-fechas {
+  background-color: var(--color-bg);
+}
+
+.tour-fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid #2a2a2a;
+  transition: background var(--transicion);
+}
+
+.tour-fila:hover {
+  background-color: #1a1a1a;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.tour-ciudad {
+  font-size: 1.1rem;
+  color: var(--color-blanco);
+  flex: 1;
+}
+
+.tour-ciudad small {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-gris);
+  margin-top: 2px;
+}
+
+.tour-fecha {
+  font-size: 1rem;
+  color: var(--color-rosa);
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  min-width: 80px;
+  text-align: center;
+}
+
+.ts-btn-ticket {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--color-rosa);
+  color: #111;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  border-radius: var(--radio);
+  transition: background var(--transicion), transform var(--transicion);
+  min-width: 100px;
+  text-align: center;
+}
+
+.ts-btn-ticket:hover {
+  background-color: var(--color-rosa-hover);
+  color: #111;
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+/* Responsive tour */
+@media (max-width: 576px) {
+  .tour-hero {
+    height: 220px;
+  }
+
+  .tour-fila {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tour-ciudad {
+    flex: 1 1 100%;
+  }
+
+  .tour-fecha {
+    min-width: auto;
+    text-align: left;
+  }
+}
+
+/* =============================================
+   TABLA - TOUR (viejo, no se usa)
+   ============================================= */
+.ts-table {
+  color: var(--color-gris-claro) !important;
+  border-color: #333 !important;
+}
+
+.ts-table thead tr {
+  background-color: var(--color-rosa) !important;
+  color: #111 !important;
+}
+
+.ts-table thead th {
+  color: #111 !important;
+  border: none !important;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+.ts-table tbody tr {
+  border-color: #2a2a2a !important;
+  transition: background var(--transicion);
+}
+
+.ts-table tbody tr:hover {
+  background-color: #1c1c1c !important;
+}
+
+.ts-table td {
+  color: var(--color-gris-claro) !important;
+  border-color: #2a2a2a !important;
+  vertical-align: middle;
+}
+
+.ts-link {
+  color: var(--color-rosa);
+  text-decoration: none;
+  transition: color var(--transicion);
+}
+
+.ts-link:hover {
+  color: var(--color-rosa-hover);
+  text-decoration: underline;
+}
+
+/* =============================================
+   DISCOGRAFÍA
+   ============================================= */
+.ts-album-row {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radio);
+  padding: 1.5rem;
+  border: 1px solid #2a2a2a;
+  transition: border-color var(--transicion);
+}
+
+.ts-album-row:hover {
+  border-color: rgba(232, 160, 191, 0.3);
+}
+
+.ts-album-title {
+  font-family: var(--fuente-titulo);
+  font-size: 1.4rem;
+  color: var(--color-blanco);
+  margin-bottom: 0.5rem;
+}
+
+.ts-album-year {
+  font-size: 1rem;
+  color: var(--color-rosa);
+  font-style: italic;
+}
+
+.ts-album-desc {
+  color: var(--color-gris-claro);
+  font-size: 0.9rem;
+}
+
+/* =============================================
+   GALERÍA
+   ============================================= */
+.ts-gallery-item {
+  overflow: hidden;
+  border-radius: var(--radio);
+  aspect-ratio: 1;
+  border: 2px solid #2a2a2a;
+  transition: border-color var(--transicion);
+}
+
+.ts-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter var(--transicion);
+  filter: brightness(0.85);
+}
+
+.ts-gallery-item:hover {
+  border-color: var(--color-rosa);
+}
+
+.ts-gallery-item:hover img {
+  transform: scale(1.07);
+  filter: brightness(1);
+}
+
+/* =============================================
+   FORMULARIO - CONTACTO
+   ============================================= */
+.ts-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-rosa);
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+/* Sobreescribe Bootstrap en inputs */
+.ts-input {
+  background-color: var(--color-bg-card) !important;
+  border: 1px solid #333 !important;
+  color: var(--color-blanco) !important;
+  border-radius: var(--radio) !important;
+}
+
+.ts-input:focus {
+  border-color: var(--color-rosa) !important;
+  box-shadow: 0 0 0 0.2rem rgba(232, 160, 191, 0.15) !important;
+  background-color: var(--color-bg-card) !important;
+  color: var(--color-blanco) !important;
+}
+
+.ts-input::placeholder {
+  color: var(--color-gris) !important;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.ts-footer {
+  background-color: #0a0a0a;
+  border-top: 1px solid rgba(232, 160, 191, 0.15);
+  color: var(--color-gris);
+  font-size: 0.85rem;
+}
+
+.ts-footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.ts-footer-icons img {
+  width: 26px;
+  height: 26px;
+  opacity: 0.5;
+  filter: brightness(0) invert(1);
+  transition: opacity var(--transicion), transform var(--transicion);
+}
+
+.ts-footer-icons a:hover img {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* =============================================
+   ANIMACIONES
+   ============================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .ts-hero {
+    background-attachment: scroll;
+  }
+
+  .ts-album-row {
+    padding: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .ts-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .ts-page-title {
+    font-size: 2rem;
+    letter-spacing: 0.15em;
+  }
+
+  .ts-navbar .nav-link {
+    margin-left: 0;
+    padding: 0.4rem 0;
+  }
+
+  .ts-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ts-table th,
+  .ts-table td {
+    font-size: 0.8rem;
+  }
+}
