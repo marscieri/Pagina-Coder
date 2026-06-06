@@ -1,0 +1,107 @@
+@use 'variables' as v;
+
+.tour-hero {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  background-color: #000;
+
+  &-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    opacity: 0.7;
+  }
+
+  &-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, #111111 100%);
+    z-index: 1;
+  }
+}
+
+.tour-fechas {
+  background-color: v.$color-bg;
+}
+
+.tour-fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid #2a2a2a;
+  transition: background v.$transicion;
+
+  &:hover {
+    background-color: #1a1a1a;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.tour-ciudad {
+  font-size: 1.1rem;
+  color: v.$color-blanco;
+  flex: 1;
+
+  small {
+    display: block;
+    font-size: 0.8rem;
+    color: v.$color-gris;
+    margin-top: 2px;
+  }
+}
+
+.tour-fecha {
+  font-size: 1rem;
+  color: v.$color-rosa;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  min-width: 80px;
+  text-align: center;
+}
+
+.ts-btn-ticket {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background-color: v.$color-rosa;
+  color: #111;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  border-radius: v.$radio;
+  transition: background v.$transicion, transform v.$transicion;
+  min-width: 100px;
+  text-align: center;
+
+  &:hover {
+    background-color: v.$color-rosa-hover;
+    color: #111;
+    transform: scale(1.05);
+  }
+}
+
+// Responsive
+@media (max-width: 576px) {
+  .tour-hero {
+    height: 220px;
+  }
+
+  .tour-fila {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tour-ciudad {
+    flex: 1 1 100%;
+  }
+
+  .tour-fecha {
+    min-width: auto;
+    text-align: left;
+  }
+}

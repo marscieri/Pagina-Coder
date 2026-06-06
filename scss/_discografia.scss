@@ -1,0 +1,49 @@
+@use 'variables' as v;
+
+.ts-album-row {
+  background-color: v.$color-bg-card;
+  border-radius: v.$radio;
+  padding: 1.5rem;
+  border: 1px solid #2a2a2a;
+  transition: border-color v.$transicion;
+
+  &:hover {
+    border-color: rgba(232, 160, 191, 0.3);
+  }
+}
+
+.ts-album-title {
+  font-family: v.$fuente-titulo;
+  font-size: 1.4rem;
+  color: v.$color-blanco;
+  margin-bottom: 0.5rem;
+}
+
+.ts-album-year {
+  font-size: 1rem;
+  color: v.$color-rosa;
+  font-style: italic;
+}
+
+.ts-album-desc {
+  color: v.$color-gris-claro;
+  font-size: 0.9rem;
+}
+
+.ts-btn-spotify {
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  background-color: #1DB954;
+  color: white;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background v.$transicion, transform v.$transicion;
+
+  &:hover {
+    background-color: #17a349;
+    color: white;
+    transform: scale(1.05);
+  }
+}

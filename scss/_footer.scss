@@ -1,0 +1,27 @@
+@use 'variables' as v;
+
+.ts-footer {
+  background-color: #0a0a0a;
+  border-top: 1px solid rgba(232, 160, 191, 0.15);
+  color: v.$color-gris;
+  font-size: 0.85rem;
+}
+
+.ts-footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+
+  img {
+    width: 26px;
+    height: 26px;
+    opacity: 0.5;
+    filter: brightness(0) invert(1);
+    transition: opacity v.$transicion, transform v.$transicion;
+  }
+
+  a:hover img {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}

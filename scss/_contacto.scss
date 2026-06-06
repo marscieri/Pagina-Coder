@@ -1,0 +1,66 @@
+@use 'variables' as v;
+
+.ts-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: v.$color-rosa;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.ts-input {
+  background-color: v.$color-bg-card !important;
+  border: 1px solid #333 !important;
+  color: v.$color-blanco !important;
+  border-radius: v.$radio !important;
+
+  &:focus {
+    border-color: v.$color-rosa !important;
+    box-shadow: 0 0 0 0.2rem rgba(232, 160, 191, 0.15) !important;
+    background-color: v.$color-bg-card !important;
+    color: v.$color-blanco !important;
+  }
+
+  &::placeholder {
+    color: v.$color-gris !important;
+  }
+}
+
+.redes-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ts-link {
+  color: v.$color-rosa;
+  text-decoration: none;
+  transition: color v.$transicion;
+
+  &:hover {
+    color: v.$color-rosa-hover;
+    text-decoration: underline;
+  }
+}
+.ts-btn {
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  border: 1px solid v.$color-rosa;
+  color: v.$color-rosa;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: transparent;
+  border-radius: v.$radio;
+  transition: background v.$transicion, color v.$transicion;
+  cursor: pointer;
+
+  &:hover {
+    background: v.$color-rosa;
+    color: #111111;
+    text-decoration: none;
+  }
+}

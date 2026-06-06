@@ -1,0 +1,31 @@
+// Importa todos los partials
+@use 'variables';
+@use 'navbar';
+@use 'hero';
+@use 'footer';
+@use 'tour';
+@use 'discografia';
+@use 'galeria';
+@use 'contacto';
+
+// Estilos generales
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: variables.$color-bg;
+  color: variables.$color-blanco;
+  font-family: variables.$fuente-cuerpo;
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}

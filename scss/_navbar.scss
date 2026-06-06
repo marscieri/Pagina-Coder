@@ -1,0 +1,57 @@
+@use 'variables' as v;
+
+.ts-navbar {
+  background-color: #0a0a0a !important;
+  border-bottom: 1px solid rgba(232, 160, 191, 0.2);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .ts-brand {
+    font-family: v.$fuente-titulo;
+    font-size: 1.3rem;
+    letter-spacing: 0.12em;
+    color: v.$color-rosa !important;
+    transition: color v.$transicion;
+
+    &:hover {
+      color: v.$color-rosa-hover !important;
+    }
+  }
+
+  .nav-link {
+    color: v.$color-gris-claro !important;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    margin-left: 1rem;
+    padding-bottom: 4px;
+    position: relative;
+    transition: color v.$transicion;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: v.$color-rosa;
+      transition: width v.$transicion;
+    }
+
+    &:hover,
+    &.active {
+      color: v.$color-rosa !important;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.ts-toggler {
+  border-color: v.$color-rosa !important;
+  filter: invert(1);
+}
