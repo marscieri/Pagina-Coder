@@ -14,3 +14,36 @@ $fuente-cuerpo: 'Arial', sans-serif;
 // Otros
 $transicion: 0.3s ease;
 $radio: 6px;
+
+// Mixins
+@mixin centrar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin overlay-oscuro($opacidad: 0.75) {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, $opacidad);
+}
+
+@mixin titulo-seccion {
+  font-family: $fuente-titulo;
+  font-size: 1.8rem;
+  color: $color-rosa;
+  margin-bottom: 1.2rem;
+}
+
+// Extend base
+%btn-base {
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: $radio;
+  transition: background $transicion, color $transicion;
+  cursor: pointer;
+}
